@@ -18,13 +18,18 @@ public class Playercontroller2D : MonoBehaviour{
 
     private void FixedUpdate()
     {
-        if(Input.GetKey("d") || Input.GetKey("RIGHT"))
+        if(Input.GetKey("d") || Input.GetKey("right"))
         {
             rb2d.velocity = new Vector2(2, 0);
         }
         else if(Input.GetKey("a") || Input.GetKey("left"))
         {
             rb2d.velocity = new Vector2(-2, 0);
+        }
+
+        if(Input.GetKey("space"))
+        {
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 3);
         }
     }
 
