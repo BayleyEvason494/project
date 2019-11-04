@@ -11,31 +11,28 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -796565589416384704}
-    m_Position: {x: 210, y: 210, z: 0}
+    m_Position: {x: 550, y: 350, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: -1778604744863317868}
-    m_Position: {x: 210, y: 250, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3838634665647333812}
-    m_Position: {x: 210, y: 290, z: 0}
+    m_State: {fileID: -893462991859294960}
+    m_Position: {x: 585, y: 415, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 130, z: 0}
-  m_EntryPosition: {x: 50, y: 210, z: 0}
-  m_ExitPosition: {x: 220, y: 130, z: 0}
+  m_AnyStatePosition: {x: 350, y: 320, z: 0}
+  m_EntryPosition: {x: 350, y: 360, z: 0}
+  m_ExitPosition: {x: 350, y: 280, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -796565589416384704}
---- !u!1102 &-1778604744863317868
+--- !u!1102 &-893462991859294960
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: player run
+  m_Name: player idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -48,7 +45,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7dab5b8969c9b4f4c8eb5414c95f8b17, type: 2}
+  m_Motion: {fileID: 7400000, guid: 58bb7fb915b90d34dbf9a1a75aa2e092, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -102,29 +99,3 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &3838634665647333812
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: player jump
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 157efbe333a80aa43b290f290207e2a8, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
