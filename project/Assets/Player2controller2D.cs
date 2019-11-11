@@ -22,12 +22,14 @@ public class Player2controller2D : MonoBehaviour
         {
             rb2d.velocity = new Vector2(4, rb2d.velocity.y);
             animator.Play("Player_run");
+            spriteRenderer.flipX = false;
         }
         else if (Input.GetKey("left"))
         {
             rb2d.velocity = new Vector2(-4, rb2d.velocity.y);
             animator.Play("Player_run");
-       
+            spriteRenderer.flipX = true;
+
         }
         if (Input.GetKey("up"))
         {

@@ -25,12 +25,13 @@ public class Playercontroller2D : MonoBehaviour
         {
             rb2d.velocity = new Vector2(4, rb2d.velocity.y);
             animator.Play("player_run");
+            spriteRenderer.flipX = false;
         }
         else if (Input.GetKey("a"))
         {
             rb2d.velocity = new Vector2(-4, rb2d.velocity.y);
             animator.Play("player_run");
-      
+            spriteRenderer.flipX = true;
         }
         if (Input.GetKey("w"))
         {
