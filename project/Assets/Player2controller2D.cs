@@ -2,49 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Playercontroller2D : MonoBehaviour
+public class Player2controller2D : MonoBehaviour
 {
+
     Animator animator;
     Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
 
-   
     void Start()
     {
 
         animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-
     }
-
-
     private void FixedUpdate()
     {
-        if (Input.GetKey("d"))
+        if (Input.GetKey("right"))
         {
             rb2d.velocity = new Vector2(4, rb2d.velocity.y);
-            animator.Play("player_run");
+            animator.Play("Player_run");
         }
-        else if (Input.GetKey("a"))
+        else if (Input.GetKey("left"))
         {
             rb2d.velocity = new Vector2(-4, rb2d.velocity.y);
-            animator.Play("player_run");
-      
+            animator.Play("Player_run");
+       
         }
-        if (Input.GetKey("w"))
+        if (Input.GetKey("up"))
         {
             rb2d.velocity = new Vector2(rb2d.velocity.x, 5);
-            animator.Play("player_jump");
+            animator.Play("Player_jump");
         }
         if (Input.GetKey("q"))
         {
-            animator.Play("player_punch");
+            animator.Play("Player_punch");
         }
         if (Input.GetKey("e"))
         {
-            animator.Play("player_kick");
+            animator.Play("Player_kick");
         }
-        
+
     }
-}  
+}
+
+
