@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Player2controller2D : MonoBehaviour
 {
-
     Animator animator;
     Rigidbody2D rb2d;
     SpriteRenderer spriteRenderer;
 
+    bool isGrounded;
+
+    [SerializeField]
+    Transform groundCheck;
     void Start()
     {
 
@@ -18,31 +21,48 @@ public class Player2controller2D : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Input.GetKey("right"))
+         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
+         {
+         isGrounded = true;
+         }
+         else
+         {
+         isGrounded = false;
+         }
+            if (Input.GetKey("right"))
         {
-            rb2d.velocity = new Vector2(4, rb2d.velocity.y);
-            animator.Play("Player_run");
+            rb2d.velocity = new Vector2(8, rb2d.velocity.y);
+            if (isGrounded)
+            animator.Play("Player2_run");
             spriteRenderer.flipX = false;
         }
         else if (Input.GetKey("left"))
         {
-            rb2d.velocity = new Vector2(-4, rb2d.velocity.y);
-            animator.Play("Player_run");
+            rb2d.velocity = new Vector2(-8, rb2d.velocity.y);
+            if (isGrounded)
+            animator.Play("Player2_run");
             spriteRenderer.flipX = true;
 
         }
-        if (Input.GetKey("up"))
+        else
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, 5);
-            animator.Play("Player_jump");
+            if (isGrounded)
+            animator.Play("Player2_idle");
         }
-        if (Input.GetKey("q"))
+        if (Input.GetKey("up") && isGrounded)
         {
-            animator.Play("Player_punch");
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 8);
+            animator.Play("Player2_jump");
         }
-        if (Input.GetKey("e"))
+        if (Input.GetKey("k"))
         {
-            animator.Play("Player_kick");
+            if (isGrounded)
+            animator.Play("Player2_punch");
+        }
+        if (Input.GetKey("l"))
+        {
+            if (isGrounded)
+            animator.Play("Player2_kick");
         }
 
     }

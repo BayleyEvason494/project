@@ -153,9 +153,9 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.05
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -265,9 +265,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114545820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -65.06, y: -11.59, z: -1}
+  m_LocalPosition: {x: -63.62, y: -11.65, z: -1}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 225488602}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -283,6 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 969192dccf0cc1c4fad32d12c3a2872e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 225488602}
 --- !u!1 &134281492
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +296,7 @@ GameObject:
   - component: {fileID: 134281493}
   - component: {fileID: 134281495}
   - component: {fileID: 134281494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,6 +392,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &225488601
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 225488602}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &225488602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225488601}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.116, z: 0}
+  m_LocalScale: {x: 1.16, y: 1.479, z: 1}
+  m_Children: []
+  m_Father: {fileID: 114545825}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &231020246
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231020246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.2, y: 1, z: 0}
+  m_LocalPosition: {x: -44.7, y: 1, z: 0}
   m_LocalScale: {x: 10, y: 7, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -481,7 +513,7 @@ GameObject:
   - component: {fileID: 393202083}
   - component: {fileID: 393202085}
   - component: {fileID: 393202084}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -630,7 +662,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 12.47975
+  orthographic size: 18.076925
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -654,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -44.7, y: -0.1, z: -1000}
+  m_LocalPosition: {x: -44.7, y: -0.1, z: -324.7}
   m_LocalScale: {x: 4, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -671,7 +703,7 @@ GameObject:
   - component: {fileID: 606519802}
   - component: {fileID: 606519804}
   - component: {fileID: 606519803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +810,7 @@ GameObject:
   - component: {fileID: 705469346}
   - component: {fileID: 705469348}
   - component: {fileID: 705469347}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +917,7 @@ GameObject:
   - component: {fileID: 920193618}
   - component: {fileID: 920193620}
   - component: {fileID: 920193619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -992,7 +1024,7 @@ GameObject:
   - component: {fileID: 1169273618}
   - component: {fileID: 1169273620}
   - component: {fileID: 1169273619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,6 +1133,7 @@ GameObject:
   - component: {fileID: 1189326705}
   - component: {fileID: 1189326709}
   - component: {fileID: 1189326708}
+  - component: {fileID: 1189326710}
   m_Layer: 0
   m_Name: player2
   m_TagString: Untagged
@@ -1118,7 +1151,7 @@ Animator:
   m_GameObject: {fileID: 1189326704}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5320eefc3b25089458ccd4d8aa331a38, type: 2}
+  m_Controller: {fileID: 9100000, guid: cfd878190939fe0409b311c5ffd430ce, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1185,11 +1218,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189326704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -51.02, y: -11.32, z: -1.016012}
+  m_LocalPosition: {x: -30.53, y: -11.36, z: -1.016012}
   m_LocalScale: {x: 1.5, y: 1.5, z: 0}
-  m_Children: []
+  m_Children:
+  - {fileID: 1737872959}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1189326708
 Rigidbody2D:
@@ -1205,7 +1239,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1
   m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -1225,7 +1259,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.225}
+  m_Offset: {x: 0.00052952766, y: 1.2737287}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -1236,8 +1270,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.07, y: 2.45}
+  m_Size: {x: 2.0656114, y: 2.3452976}
   m_EdgeRadius: 0
+--- !u!114 &1189326710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189326704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e92877fd76e4f4bb0ca309b36460ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 1737872959}
 --- !u!1 &1199065249
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1296,7 @@ GameObject:
   - component: {fileID: 1199065250}
   - component: {fileID: 1199065252}
   - component: {fileID: 1199065251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1355,7 +1402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1363999730}
   - component: {fileID: 1363999729}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1444,7 @@ Transform:
   m_GameObject: {fileID: 1363999728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -45.034256, y: -1.5002261, z: -316.32812}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 705469346}
   - {fileID: 1789434752}
@@ -1413,7 +1460,7 @@ Transform:
   - {fileID: 1646256063}
   - {fileID: 920193618}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1557102825
 GameObject:
@@ -1426,7 +1473,7 @@ GameObject:
   - component: {fileID: 1557102826}
   - component: {fileID: 1557102827}
   - component: {fileID: 1557102828}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1533,7 +1580,7 @@ GameObject:
   - component: {fileID: 1591013126}
   - component: {fileID: 1591013128}
   - component: {fileID: 1591013127}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1687,7 @@ GameObject:
   - component: {fileID: 1646256063}
   - component: {fileID: 1646256065}
   - component: {fileID: 1646256064}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1747,7 +1794,7 @@ GameObject:
   - component: {fileID: 1656409689}
   - component: {fileID: 1656409691}
   - component: {fileID: 1656409690}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1843,6 +1890,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1737872958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1737872959}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1737872959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737872958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.134, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1189326707}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789434751
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,7 +1931,7 @@ GameObject:
   - component: {fileID: 1789434752}
   - component: {fileID: 1789434754}
   - component: {fileID: 1789434753}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1961,7 +2038,7 @@ GameObject:
   - component: {fileID: 1994706194}
   - component: {fileID: 1994706196}
   - component: {fileID: 1994706195}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: stone floor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -65,6 +65,18 @@ TextureImporter:
   - first:
       213: -3861952770410913445
     second: Player_kick
+  - first:
+      213: 7846122532681349183
+    second: player_punch4
+  - first:
+      213: 7388399842426930641
+    second: player_1
+  - first:
+      213: -5265171290210983309
+    second: player_punch5
+  - first:
+      213: -6781412095145881161
+    second: player_3
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -426,6 +438,48 @@ TextureImporter:
       bones: []
       spriteID: ec2e6efc71ef7a145bc4d88d0b2b5cd1
       internalID: 2955534262950700801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_punch4
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 782
+        width: 275
+        height: 243
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b1ace66cce2214bb0f5652abf85cd0
+      internalID: 7846122532681349183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: player_punch5
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 490
+        width: 280
+        height: 242
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a08c7ff868657419de722560524272
+      internalID: -5265171290210983309
       vertices: []
       indices: 
       edges: []
