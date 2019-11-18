@@ -15,55 +15,66 @@ public class Playercontroller2D : MonoBehaviour
     void Start()
     {
 
-    animator = GetComponent<Animator>();
-    rb2d = GetComponent<Rigidbody2D>();
-    spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        rb2d = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
     }
     private void FixedUpdate()
     {
         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
         {
-        isGrounded = true;
+            isGrounded = true;
         }
         else
         {
-        isGrounded = false;
+            isGrounded = false;
         }
-        if (Input.GetKey("d"))
-        {
-        rb2d.velocity = new Vector2(8, rb2d.velocity.y);
-        if (isGrounded)
-        animator.Play("Player_run");
-        spriteRenderer.flipX = false;
-        }
-        else if (Input.GetKey("a"))
-        {
-        rb2d.velocity = new Vector2(-8, rb2d.velocity.y);
-        if (isGrounded)
-        animator.Play("Player_run");
-        spriteRenderer.flipX = true;
-        }
-        else
-        {
-        if (isGrounded)
-        animator.Play("Player_idle");
-        }
+
+        bool ihavepressedkey = false;
+
         if (Input.GetKey("w") && isGrounded)
         {
-        rb2d.velocity = new Vector2(rb2d.velocity.x, 6);
-        animator.Play("Player_jump");
+            ihavepressedkey = true;
+            rb2d.velocity = new Vector2(rb2d.velocity.x, 6);
+            animator.Play("Player_jump");
         }
         if (Input.GetKey("q"))
         {
-        if (isGrounded)
-        animator.Play("Player_punch");
+            ihavepressedkey = true;
+            if (isGrounded)
+                animator.Play("Player_punch");
         }
         if (Input.GetKey("e"))
         {
-        if (isGrounded)
-        animator.Play("Player_kick");
+            ihavepressedkey = true;
+            if (isGrounded)
+                animator.Play("Player_kick");
+        }
+        if (Input.GetKey("d"))
+        {
+            ihavepressedkey = true;
+            rb2d.velocity = new Vector2(8, rb2d.velocity.y);
+            if (isGrounded)
+                animator.Play("Player_run");
+            spriteRenderer.flipX = false;
         }
 
+
+        else if (Input.GetKey("a"))
+        {
+            ihavepressedkey = true;
+            rb2d.velocity = new Vector2(-8, rb2d.velocity.y);
+            if (isGrounded)
+                animator.Play("Player_run");
+            spriteRenderer.flipX = true;
+        }
+       if  (ihavepressedkey == false)
+        {
+            if (isGrounded)
+                animator.Play("Player_idle");
+        }
+
+
     }
-}  
+}

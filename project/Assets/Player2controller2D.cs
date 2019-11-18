@@ -21,48 +21,58 @@ public class Player2controller2D : MonoBehaviour
     }
     private void FixedUpdate()
     {
-         if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
-         {
-         isGrounded = true;
-         }
-         else
-         {
-         isGrounded = false;
-         }
-            if (Input.GetKey("right"))
+        if (Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground")))
         {
-            rb2d.velocity = new Vector2(8, rb2d.velocity.y);
-            if (isGrounded)
-            animator.Play("Player2_run");
-            spriteRenderer.flipX = false;
-        }
-        else if (Input.GetKey("left"))
-        {
-            rb2d.velocity = new Vector2(-8, rb2d.velocity.y);
-            if (isGrounded)
-            animator.Play("Player2_run");
-            spriteRenderer.flipX = true;
-
+            isGrounded = true;
         }
         else
         {
-            if (isGrounded)
-            animator.Play("Player2_idle");
+            isGrounded = false;
         }
+
+        bool ihavepressedkey = false;
+
         if (Input.GetKey("up") && isGrounded)
         {
-            rb2d.velocity = new Vector2(rb2d.velocity.x, 8);
+            ihavepressedkey = true;
+            rb2d.velocity = new Vector2(rb2d.velocity.x,6);
             animator.Play("Player2_jump");
         }
         if (Input.GetKey("k"))
         {
+            ihavepressedkey = true;
             if (isGrounded)
-            animator.Play("Player2_punch");
+                animator.Play("Player2_punch");
         }
         if (Input.GetKey("l"))
         {
+            ihavepressedkey = true;
             if (isGrounded)
-            animator.Play("Player2_kick");
+                animator.Play("Player2_kick");
+        }
+
+
+        if (Input.GetKey("right"))
+        {
+            ihavepressedkey = true;
+            rb2d.velocity = new Vector2(8, rb2d.velocity.y);
+            if (isGrounded)
+                animator.Play("Player2_run");
+            spriteRenderer.flipX = false;
+        }
+        else if (Input.GetKey("left"))
+        {
+            ihavepressedkey = true;
+            rb2d.velocity = new Vector2(-8, rb2d.velocity.y);
+            if (isGrounded)
+                animator.Play("Player2_run");
+            spriteRenderer.flipX = true;
+
+        }
+        if (ihavepressedkey == false)
+        {
+            if (isGrounded)
+                animator.Play("Player2_idle");
         }
 
     }
